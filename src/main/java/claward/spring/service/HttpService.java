@@ -60,7 +60,8 @@ public class HttpService {
             }
 
         } catch (Exception e) {
-            return "요청 실패: " + e.getMessage();
+            e.printStackTrace();  // 로그로 실제 예외 확인
+            return "요청 실패: " + e.getClass().getName() + " - " + e.getMessage();
         }
     }
 }
