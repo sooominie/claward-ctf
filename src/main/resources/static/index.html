@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Analysis System</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 3em;
+            background-color: #fafafa;
+            color: #333;
+        }
+        h1 {
+            font-size: 2.2em;
+            font-weight: bold;
+            color: #111;
+        }
+        .desc {
+            margin-top: 0.8em;
+            margin-bottom: 2em;
+            font-size: 1.1em;
+        }
+        input[type="text"] {
+            width: 400px;
+            padding: 0.7em;
+            font-size: 1em;
+        }
+        button {
+            padding: 0.7em 1.2em;
+            font-size: 1em;
+            margin-left: 0.5em;
+        }
+    </style>
+</head>
+<body>
+<h1>📄 Smart Analysis System v2.1</h1>
+<p class="desc">
+    외부 API 리소스를 자동으로 분석하고<br>
+    응답 결과를 요약해주는 시스템입니다.<br>
+    <br>
+    아래에 분석 대상 URL을 입력해주세요.<br>
+    외부 서비스 응답 속도, 인증 실패 등 보안 이상 여부를 자동 분석합니다.<br>
+
+</p>
+
+<form action="/report" method="get">
+    <input type="text" name="url" placeholder="분석할 리소스 URL 입력">
+    <button type="submit">분석 시작</button>
+</form>
+
+<br><br>
+<p style="font-size: 0.9em; color: #777;">※ 시스템은 보안 감사 목적의 리소스 요청만 처리합니다.</p>
+</body>
+</html>
