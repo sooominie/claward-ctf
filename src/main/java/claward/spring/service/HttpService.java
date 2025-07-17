@@ -12,12 +12,12 @@ public class HttpService {
 
     public String fetchUrl(String targetUrl) {
         try {
-            // EC2 메타데이터 접근은 명시적으로 거부
+            // [CTF 목적] 단순 문자열 기반 필터링 (우회 유도용)
             if (targetUrl.contains("169.254.169.254")) {
                 return "요청 실패: EC2 메타데이터 접근은 허용되지 않습니다.";
             }
 
-            // 외부 URL 정상 요청 처리
+            // 외부 URL 요청
             URL url = new URL(targetUrl);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setConnectTimeout(2000);
@@ -33,7 +33,7 @@ public class HttpService {
             return sb.toString();
 
         } catch (Exception e) {
-            e.printStackTrace();  // 서버 로그로 확인 가능
+            e.printStackTrace();
             return "요청 실패: " + e.getClass().getSimpleName() + " - " + e.getMessage();
         }
     }
