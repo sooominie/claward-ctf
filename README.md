@@ -11,18 +11,6 @@
 <img width="1561" height="1307" alt="image" src="https://github.com/user-attachments/assets/2c9392a9-6c4f-459f-8ad4-9a0d508dbf84" />
 
 
-```mermaid
-flowchart TD
-    A[사용자 URL 입력기(SSRF)] -->|우회 표기법 이용| B[169.254.169.254 IMDSv1]
-    B --> C[Role 이름/임시 크리덴셜 획득 (CR1)]
-    C --> D[AWS CLI로 Role/Policy 열람]
-    D --> E[Glue Job: log-forwarder-job 실행]
-    E -->|--target-url=Webhook| F[CloudWatch 로그 외부 전송]
-    F --> G[로그 내 Backup Credentials 획득 (CR2)]
-    G --> H[S3 권한 확인 및 flag.txt 다운로드]
-```
-
----
 
 ## 시나리오 구성 요소
 
